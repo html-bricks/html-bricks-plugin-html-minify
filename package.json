@@ -1,6 +1,6 @@
 {
   "name": "html-bricks-plugin-html-minify",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Html minification for HTML-bricks using HTMLMinifier",
   "main": "index.js",
   "scripts": {
