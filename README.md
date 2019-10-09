@@ -1,10 +1,8 @@
-# html-bricks-plugin-postcss
+# html-bricks-plugin-html-minify
 
-PostCSS support for [html-bricks](https://github.com/html-bricks/html-bricks).
+Html minification for [html-bricks](https://github.com/html-bricks/html-bricks) using [HTMLMinifier](https://www.npmjs.com/package/html-minifier).
 
-This plugin bundles autoprefixer, postcss-preset-env and precss to make a solid default setup. Browserslist is supported.
-
-> Only `.css` files are parsed, so if you use [html-bricks-plugin-inline-css](https://github.com/html-bricks/html-bricks-plugin-inline-css), run this plugin before that one.
+> You should use this as the last plugin in your config, as it will remove attributes that might be used by other plugins.
 
 ## Requirements
 
@@ -14,14 +12,44 @@ This plugin bundles autoprefixer, postcss-preset-env and precss to make a solid 
 
 Install using npm
 
-`npm install --save-dev html-bricks-plugin-postcss`
+`npm install --save-dev html-bricks-plugin-html-minify`
 
 Then include the plugin in your config
 
 ```json
 {
   "plugins": [
-    "plugin-postcss"
+    "plugin-html-minify"
   ]
+}
+```
+
+## Default config
+
+```js
+const options = {
+  collapseBooleanAttributes: true,
+  caseSensitive: true,
+  collapseInlineTagWhitespace: true,
+  collapseWhitespace: true,
+  conservativeCollapse: true,
+  continueOnParseError: false,
+  html5: true,
+  decodeEntities: true,
+  keepClosingSlash: false,
+  minifyCSS: true,
+  minifyJS: true,
+  minifyURLs: false,
+  preserveLineBreaks: false,
+  preventAttributesEscaping: false,
+  quoteCharacter: '"',
+  removeAttributeQuotes: true,
+  removeComments: true,
+  removeEmptyAttributes: true,
+  removeOptionalTags: true,
+  removeRedundantAttributes: true,
+  removeScriptTypeAttributes: true,
+  removeStyleLinkTypeAttributes: true,
+  useShortDoctype: true
 }
 ```
